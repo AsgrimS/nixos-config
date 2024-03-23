@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
@@ -18,7 +19,7 @@
   networking.hostName = "asgrim-nixos-laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -66,27 +67,27 @@
   services.printing.enable = true;
 
   # Graphics
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.opengl = {
-  	enable = true;
-	driSupport = true;
-	driSupport32Bit = true;
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
   };
 
   hardware.nvidia = {
-  	modesetting.enable = true;
-	open = true;
-	nvidiaSettings = true;
+    modesetting.enable = true;
+    open = true;
+    nvidiaSettings = true;
 
-	prime = {
-		sync.enable = true;
+    prime = {
+      sync.enable = true;
 
-		intelBusId = "PCI:0:0:2:0";
-		nvidiaBusId = "PCI:0:1:0:0";
-	};
+      intelBusId = "PCI:0:0:2:0";
+      nvidiaBusId = "PCI:0:1:0:0";
+    };
 
-	package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
 
@@ -116,29 +117,32 @@
     isNormalUser = true;
     description = "asgrim";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    ];
+    packages = with pkgs; [ ];
   };
 
   home-manager = {
-  # also pass inputs to home-manager modules
-  extraSpecialArgs = {inherit inputs;};
-  users = {
-    "asgrim" = import ./home.nix;
-   };
+    # also pass inputs to home-manager modules
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "asgrim" = import ./home.nix;
+    };
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   neovim	
+    neovim
+    gcc
+    unzip
+    rustup
+    python312
+    nodejs_21
   ];
 
   environment.sessionVariables = rec {
-	XCURSOR_THEME = "Numix-Cursor";
+    XCURSOR_THEME = "Numix-Cursor";
   };
 
 

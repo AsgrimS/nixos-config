@@ -5,7 +5,8 @@
   home.homeDirectory = "/home/asgrim";
 
   imports = [
-  	../../modules/home/alacritty.nix
+    ../../modules/home/alacritty.nix
+    ../../modules/home/tmux.nix
   ];
 
   # link the configuration file in current directory to the specified location in home directory
@@ -15,7 +16,7 @@
   # home.file.".config/i3/scripts" = {
   #   source = ./scripts;
   #   recursive = true;   # link recursively
-  #   executable = true;  # make all files executable
+  #   executable = true;  # make all files executabl
   # };
 
   # encode the file content in nix configuration file directly
@@ -25,21 +26,31 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     brave
+    ripgrep
+    lazygit
+    lazydocker
+    bottom
+    mise
+    gnome.dconf-editor
   ];
 
   programs.zsh = {
-  enable = true;
-  enableCompletion = true;
-  enableAutosuggestions = true;
-  syntaxHighlighting.enable = true;
+    enable = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
 
-  shellAliases = {
-    update = "sudo nixos-rebuild switch --flake ~/.config/.nixos#default";
+    shellAliases = {
+      update = "sudo nixos-rebuild switch --flake ~/.config/.nixos#default";
+    };
+    history.size = 10000;
+    history.path = "${config.xdg.dataHome}/zsh/history";
+
+    autosuggestion = {
+      enable = true;
+    };
   };
-  history.size = 10000;
-  history.path = "${config.xdg.dataHome}/zsh/history";
-};
 
 
 
@@ -54,24 +65,25 @@
     enable = true;
   };
 
+  fonts.fontconfig.enable = true;
 
+  dconf.settings = {
+    #"org/gnome/desktop/background" = {
+    #  picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
+    #};
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      monospace-font-name = "FiraCode Nerd Font 11";
+    };
+  };
 
-    dconf.settings = {
-      #"org/gnome/desktop/background" = {
-      #  picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
-      #};
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome.gnome-themes-extra;
     };
 
-    gtk = {
-      enable = true;
-      theme = {
-        name = "Adwaita-dark";
-        package = pkgs.gnome.gnome-themes-extra;
-      };
-      
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
@@ -81,7 +93,7 @@
       name = "Numix-Cursor";
       package = pkgs.numix-cursor-theme;
     };
-    };
+  };
 
 
   # This value determines the home Manager release that your
