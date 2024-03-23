@@ -5,8 +5,8 @@
   home.homeDirectory = "/home/asgrim";
 
   imports = [
-    ../../modules/home/alacritty.nix
-    ../../modules/home/tmux.nix
+    ../../modules/home/bundles/terminal.nix
+    ../../modules/home/gnome.nix
   ];
 
   # link the configuration file in current directory to the specified location in home directory
@@ -26,73 +26,17 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
     brave
     ripgrep
     lazygit
     lazydocker
     bottom
-    mise
-    gnome.dconf-editor
   ];
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-
-    shellAliases = {
-      update = "sudo nixos-rebuild switch --flake ~/.config/.nixos#default";
-    };
-    history.size = 10000;
-    history.path = "${config.xdg.dataHome}/zsh/history";
-
-    autosuggestion = {
-      enable = true;
-    };
-  };
-
-
-
-  # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
     userName = "AsgrimS";
     userEmail = "jan.semik@gmail.com";
-  };
-
-  programs.starship = {
-    enable = true;
-  };
-
-  fonts.fontconfig.enable = true;
-
-  dconf.settings = {
-    #"org/gnome/desktop/background" = {
-    #  picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
-    #};
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      monospace-font-name = "FiraCode Nerd Font 11";
-    };
-  };
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome.gnome-themes-extra;
-    };
-
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    };
-
-    cursorTheme = {
-      name = "Numix-Cursor";
-      package = pkgs.numix-cursor-theme;
-    };
   };
 
 
