@@ -5,12 +5,10 @@
   ];
 
   dconf.settings = {
-    #"org/gnome/desktop/background" = {
-    #  picture-uri-dark = "file://${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.src}";
-    #};
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
       monospace-font-name = "FiraCode Nerd Font 11";
+      enable-hot-corners = false;
     };
   };
 

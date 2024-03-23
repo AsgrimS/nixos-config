@@ -6,7 +6,7 @@
 
   imports = [
     ../../modules/home/bundles/terminal.nix
-    ../../modules/home/gnome.nix
+    ../../modules/home/gnome-ext.nix
   ];
 
   # link the configuration file in current directory to the specified location in home directory
