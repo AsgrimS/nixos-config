@@ -39,6 +39,10 @@
     userEmail = "jan.semik@gmail.com";
   };
 
+  programs.zsh.shellAliases = {
+    update = "sudo nixos-rebuild switch --flake ~/.config/.nixos#laptop";
+  };
+
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
