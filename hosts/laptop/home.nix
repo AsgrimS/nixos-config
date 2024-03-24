@@ -27,10 +27,6 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     brave
-    ripgrep
-    lazygit
-    lazydocker
-    bottom
   ];
 
   programs.git = {
@@ -41,6 +37,7 @@
 
   programs.zsh.shellAliases = {
     update = "sudo nixos-rebuild switch --flake ~/.config/.nixos#laptop";
+    j = "z";
   };
 
 
