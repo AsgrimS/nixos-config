@@ -7,6 +7,7 @@
   imports = [
     ../../modules/home/bundles/terminal.nix
     ../../modules/home/gnome-ext.nix
+    ../../modules/home/bundles/desktop-apps.nix
   ];
 
   # link the configuration file in current directory to the specified location in home directory
@@ -27,7 +28,6 @@
   nixpkgs.config.allowUnfree = true;
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    brave
   ];
 
   programs.git = {
