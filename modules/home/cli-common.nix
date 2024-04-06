@@ -6,6 +6,7 @@
     lazydocker
     bottom
     devbox
+    fastfetch
   ];
 
   programs.zoxide = {
