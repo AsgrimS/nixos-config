@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
 
   home.packages = with pkgs; [
     gnome.dconf-editor
@@ -9,6 +9,10 @@
       color-scheme = "prefer-dark";
       monospace-font-name = "FiraCode Nerd Font 11";
       enable-hot-corners = false;
+    };
+    "org/gnome/desktop/background" = {
+      picture-uri = "${config.home.homeDirectory}/.config/nixos-config/assets/mountains.jpg";
+      picture-uri-dark = "${config.home.homeDirectory}/.config/nixos-config/assets/mountains.jpg";
     };
   };
 
