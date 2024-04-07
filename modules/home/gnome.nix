@@ -14,6 +14,14 @@
       picture-uri = "${config.home.homeDirectory}/.config/nixos-config/assets/mountains.jpg";
       picture-uri-dark = "${config.home.homeDirectory}/.config/nixos-config/assets/mountains.jpg";
     };
+    "org/gnome/mutter" = {
+      dynamic-workspaces = true;
+      workspaces-only-on-primary = true;
+      edge-tiling = true;
+    };
+    "org/gnome/desktop/wm/preferences" = {
+      button-layout = ":minimize,maximize,close";
+    };
   };
 
   gtk = {
