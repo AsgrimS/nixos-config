@@ -37,7 +37,9 @@
   };
 
   programs.zsh.shellAliases = {
-    update = "sudo nixos-rebuild switch --flake ~/.config/nixos-config#desktop";
+    rebuild = "sudo nixos-rebuild switch --flake ~/.config/nixos-config#desktop";
+    update = "nix flake update -I ~/.config/nixos-config";
+    clean = "nix-collect-garbage -d";
     j = "z";
   };
 
