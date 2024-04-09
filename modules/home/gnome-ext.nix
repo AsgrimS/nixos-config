@@ -5,6 +5,7 @@
 
   home.packages = with pkgs.gnomeExtensions; [
     dash-to-panel
+    appindicator
   ];
 
   dconf.settings = {
