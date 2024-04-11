@@ -6,5 +6,6 @@
     ../tmux.nix
     ../alacritty.nix
     ../cli-common.nix
+    ../lsp.nix
   ];
 }
