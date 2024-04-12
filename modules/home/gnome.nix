@@ -22,9 +22,13 @@
     "org/gnome/desktop/wm/preferences" = {
       button-layout = ":minimize,maximize,close";
     };
+    "org/gnome/desktop/session" = {
+      idle-delay = 600; # 10 minutes
+    };
     "org/gnome/settings-daemon/plugins/power" = {
       sleep-inactive-ac-type = "nothing";
       sleep-inactive-battery-type = "nothing";
+      power-button-action = "interactive";
     };
   };
 
