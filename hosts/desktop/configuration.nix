@@ -70,6 +70,9 @@
   # Graphics
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  # Open RGB
+  services.hardware.openrgb.enable = true;
+
   hardware.opengl = {
     enable = true;
     driSupport = true;
