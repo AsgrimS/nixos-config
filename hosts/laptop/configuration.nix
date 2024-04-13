@@ -15,6 +15,10 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelModules = [ "hid-apple" ];
+  boot.extraModprobeConfig = ''
+    options hid_apple fnmode=2
+  '';
 
   networking.hostName = "asgrim-nixos-laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
