@@ -17,6 +17,7 @@
       panel-sizes = ''{"0":"30","1":"30"}'';
       trans-use-custom-opacity = true;
       trans-use-dynamic-opacity = true;
+      intellihide = true;
     };
   };
 }
