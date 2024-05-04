@@ -155,7 +155,7 @@
     unzip
     rustup
     python312
-    nodejs_21
+    nodejs_22
   ];
 
   environment.sessionVariables = rec {
