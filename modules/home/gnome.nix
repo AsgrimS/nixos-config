@@ -1,7 +1,7 @@
 { pkgs, config, ... }: {
 
   home.packages = with pkgs; [
-    gnome.dconf-editor
+    dconf-editor
   ];
 
   dconf.settings = {
@@ -36,7 +36,7 @@
     enable = true;
     theme = {
       name = "Adwaita-dark";
-      package = pkgs.gnome.gnome-themes-extra;
+      package = pkgs.gnome-themes-extra;
     };
 
     iconTheme = {
