@@ -10,6 +10,7 @@
 
     plugins = with pkgs; [
       tmuxPlugins.onedark-theme
+      tmuxPlugins.resurrect
     ];
   };
 }
