@@ -2,6 +2,5 @@
   home.packages = with pkgs; [
     lua-language-server
     stylua
-    ruff
   ];
 }
