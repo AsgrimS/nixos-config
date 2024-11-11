@@ -154,6 +154,7 @@
     python313
     nodejs_22
     gnumake
+    gnome-tweaks
   ];
 
   environment.sessionVariables = rec {
