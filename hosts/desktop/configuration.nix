@@ -149,8 +149,9 @@
     gcc
     unzip
     rustup
-    python312
+    python313
     nodejs_22
+    gnumake
   ];
 
   environment.sessionVariables = rec {
