@@ -5,7 +5,7 @@
     settings = {
       env.TERM = "xterm-256color";
 
-      shell = {
+      terminal.shell = {
         program = "${config.home.homeDirectory}/.nix-profile/bin/zsh";
         args = [ "-l" "-c" "tmux new-session -A -s main" ];
       };
