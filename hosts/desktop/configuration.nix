@@ -151,6 +151,7 @@
     rustup
     python313
     nodejs_22
+    deno
     gnumake
     gnome-tweaks
   ];
