@@ -7,6 +7,7 @@
     bottom
     devbox
     fastfetch
+    devenv
   ];
 
   programs.zoxide = {
