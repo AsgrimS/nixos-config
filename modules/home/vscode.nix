@@ -15,6 +15,10 @@
       rust-lang.rust-analyzer
       pkief.material-icon-theme
       tauri-apps.tauri-vscode
+      ms-python.python
+      ms-python.vscode-pylance
+      ms-python.debugpy
+      ms-azuretools.vscode-docker
     ];
 
     userSettings = {
@@ -49,18 +53,28 @@
       };
     };
 
-    userTasks = {
-      version = "2.0.0";
-      tasks = [{
-        type = "shell";
-        label = "LazyGit";
-        command = "lazygit";
-        presentation = {
-          reveal = "always";
-          panel = "new";
-        };
-      }];
-    };
+    # userTasks = {
+    #   version = "2.0.0";
+    #   tasks = [{
+    #     type = "shell";
+    #     label = "LazyGit";
+    #     command = "lazygit";
+    #     presentation = {
+    #       "echo" = true;
+    #       "reveal" = "always";
+    #       "focus" = true;
+    #       "panel" = "dedicated";
+    #       "clear" = false;
+    #       "close" = true;
+    #     };
+    #   }];
+    # };
+
+    # keybindings = [{
+    #   key = "alt+g";
+    #   command = "workbench.action.tasks.runTask";
+    #   args = "lazygit";
+    # }];
   };
 }
 
