@@ -5,5 +5,6 @@
     ../brave.nix
     ../obsidian.nix
     ../qalculate.nix
+    ../vscode.nix
   ];
 }
