@@ -5,12 +5,12 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    ../../modules/nix/docker.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -63,7 +63,6 @@
     LC_TELEPHONE = "pl_PL.UTF-8";
     LC_TIME = "pl_PL.UTF-8";
   };
-
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -139,9 +138,7 @@
   home-manager = {
     # also pass inputs to home-manager modules
     extraSpecialArgs = { inherit inputs; };
-    users = {
-      "asgrim" = import ./home.nix;
-    };
+    users = { "asgrim" = import ./home.nix; };
   };
 
   # Allow unfree packages
@@ -160,17 +157,11 @@
     gnome-tweaks
   ];
 
-  environment.sessionVariables = rec {
-    XCURSOR_THEME = "Numix-Cursor";
-  };
-
+  environment.sessionVariables = rec { XCURSOR_THEME = "Numix-Cursor"; };
 
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
-
-
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

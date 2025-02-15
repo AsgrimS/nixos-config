@@ -51,6 +51,8 @@
           "editorInlayHint.background" = "#18181800";
         };
       };
+
+      "terminal.integrated.defaultProfile.osx" = "zsh";
     };
 
     # userTasks = {
