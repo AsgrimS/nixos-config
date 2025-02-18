@@ -8,6 +8,7 @@
     devbox
     fastfetch
     devenv
+    awscli2
   ];
 
   programs.zoxide = {
