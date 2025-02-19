@@ -6,5 +6,6 @@
     ../obsidian.nix
     ../qalculate.nix
     ../vscode.nix
+    ../onlyoffice.nix
   ];
 }
