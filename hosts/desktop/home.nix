@@ -27,8 +27,7 @@
 
   nixpkgs.config.allowUnfree = true;
   # Packages that should be installed to the user profile.
-  home.packages = with pkgs; [
-  ];
+  home.packages = with pkgs; [ ];
 
   programs.git = {
     enable = true;
@@ -37,13 +36,12 @@
   };
 
   programs.zsh.shellAliases = {
-    n-rebuild = "sudo nixos-rebuild switch --flake ~/.config/nixos-config#desktop";
+    n-rebuild =
+      "sudo nixos-rebuild switch --flake ~/.config/nixos-config#desktop";
     n-update = "nix flake update -I ~/.config/nixos-config";
     n-clean = "sudo nix-collect-garbage -d";
     j = "z";
   };
-
-  programs.zsh.initExtra = "echo\nfastfetch";
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage

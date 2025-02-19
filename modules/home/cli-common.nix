@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   home.packages = with pkgs; [
     tldr
     ripgrep
@@ -15,4 +15,10 @@
     enable = true;
     enableZshIntegration = true;
   };
+
+  programs.zsh.initExtra = ''
+    echo
+    fastfetch
+    complete -C '${config.home.homeDirectory}/.nix-profile/bin/aws_completer' aws
+  '';
 }
