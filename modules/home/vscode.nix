@@ -31,6 +31,7 @@
 
       "editor.formatOnSave" = true;
       "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "editor.linkedEditing" = true;
 
       # Rust
       "[rust]" = { "editor.defaultFormatter" = "rust-lang.rust-analyzer"; };
