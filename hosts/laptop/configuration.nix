@@ -5,12 +5,11 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -59,7 +58,6 @@
     LC_TIME = "pl_PL.UTF-8";
   };
 
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -105,10 +103,8 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-
-
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -137,9 +133,7 @@
   home-manager = {
     # also pass inputs to home-manager modules
     extraSpecialArgs = { inherit inputs; };
-    users = {
-      "asgrim" = import ./home.nix;
-    };
+    users = { "asgrim" = import ./home.nix; };
   };
 
   # Allow unfree packages
@@ -158,17 +152,11 @@
     gnome-tweaks
   ];
 
-  environment.sessionVariables = rec {
-    XCURSOR_THEME = "Numix-Cursor";
-  };
-
+  environment.sessionVariables = rec { XCURSOR_THEME = "Numix-Cursor"; };
 
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
-
-
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
