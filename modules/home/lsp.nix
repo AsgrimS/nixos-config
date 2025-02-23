@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     lua-language-server
     stylua
@@ -6,4 +7,3 @@
     nixfmt-rfc-style
   ];
 }
-

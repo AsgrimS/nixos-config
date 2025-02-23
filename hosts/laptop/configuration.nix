@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   imports = [
@@ -23,7 +28,10 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     auto-optimise-store = true;
   };
 
@@ -126,14 +134,19 @@
   users.users.asgrim = {
     isNormalUser = true;
     description = "asgrim";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [ ];
   };
 
   home-manager = {
     # also pass inputs to home-manager modules
     extraSpecialArgs = { inherit inputs; };
-    users = { "asgrim" = import ./home.nix; };
+    users = {
+      "asgrim" = import ./home.nix;
+    };
   };
 
   # Allow unfree packages
@@ -152,7 +165,9 @@
     gnome-tweaks
   ];
 
-  environment.sessionVariables = rec { XCURSOR_THEME = "Numix-Cursor"; };
+  environment.sessionVariables = rec {
+    XCURSOR_THEME = "Numix-Cursor";
+  };
 
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;

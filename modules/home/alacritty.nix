@@ -1,4 +1,5 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
   programs.alacritty = {
     enable = true;
 
@@ -7,7 +8,11 @@
 
       terminal.shell = {
         program = "${config.home.homeDirectory}/.nix-profile/bin/zsh";
-        args = [ "-l" "-c" "tmux new-session -A -s main" ];
+        args = [
+          "-l"
+          "-c"
+          "tmux new-session -A -s main"
+        ];
       };
 
       font = {

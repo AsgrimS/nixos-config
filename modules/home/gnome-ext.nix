@@ -1,4 +1,5 @@
-{ pkgs, ... }: rec {
+{ pkgs, ... }:
+rec {
   imports = [
     ./gnome.nix
   ];
