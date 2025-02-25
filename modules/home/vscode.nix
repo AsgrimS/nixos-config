@@ -16,7 +16,7 @@
         github.copilot-chat
         github.vscode-pull-request-github
         github.vscode-github-actions
-        # rust-lang.rust-analyzer
+        rust-lang.rust-analyzer
         pkief.material-icon-theme
         tauri-apps.tauri-vscode
         ms-python.python
