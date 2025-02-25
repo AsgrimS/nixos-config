@@ -19,6 +19,11 @@
       dynamic-workspaces = true;
       workspaces-only-on-primary = true;
       edge-tiling = true;
+      experimental-features = [
+        "scale-monitor-framebuffer"
+        "xwayland-native-scaling"
+        # "variable-refresh-rate"
+      ];
     };
     "org/gnome/desktop/wm/preferences" = {
       button-layout = ":minimize,maximize,close";
