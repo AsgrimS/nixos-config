@@ -7,5 +7,6 @@
     ../qalculate.nix
     ../vscode.nix
     ../onlyoffice.nix
+    ../dbeaver.nix
   ];
 }
