@@ -11,7 +11,6 @@
         esbenp.prettier-vscode
         dbaeumer.vscode-eslint
         svelte.svelte-vscode
-        jgclark.vscode-todo-highlight
         github.copilot
         github.copilot-chat
         github.vscode-pull-request-github
@@ -24,6 +23,7 @@
         ms-python.debugpy
         ms-azuretools.vscode-docker
         bradlc.vscode-tailwindcss
+        gruntfuggly.todo-tree
       ];
 
       userSettings = {
@@ -66,6 +66,62 @@
         };
 
         "terminal.integrated.defaultProfile.osx" = "zsh";
+
+        "todo-tree.general.tags" = [
+          "TODO"
+          "FIXME"
+          "WARNING"
+          "ERROR"
+          "INFO"
+          "BUG"
+          "NOTE"
+          "HACK"
+        ];
+        "todo-tree.highlights.defaultHighlight" = {
+          "type" = "text-and-comment";
+        };
+        "todo-tree.highlights.customHighlight" = {
+          "TODO" = {
+            "foreground" = "#61afef";
+            "background" = "#1f3a5b";
+            "icon" = "check";
+          };
+          "FIXME" = {
+            "foreground" = "#e06c75";
+            "background" = "#4b2b30";
+            "icon" = "tools";
+          };
+          "WARNING" = {
+            "foreground" = "#e5c07b";
+            "background" = "#4b3f2b";
+            "icon" = "alert";
+          };
+          "ERROR" = {
+            "foreground" = "#e06c75";
+            "background" = "#4b2b30";
+            "icon" = "alert";
+          };
+          "INFO" = {
+            "foreground" = "#56b6c2";
+            "background" = "#2b3f4b";
+            "icon" = "info";
+          };
+          "BUG" = {
+            "foreground" = "#d19a66";
+            "background" = "#3e2c00";
+            "icon" = "bug";
+          };
+          "NOTE" = {
+            "foreground" = "#98c379";
+            "background" = "#2c3e00";
+            "icon" = "note";
+          };
+          "HACK" = {
+            "foreground" = "#c678dd";
+            "background" = "#3e003e";
+            "icon" = "flame";
+          };
+        };
       };
 
       # userTasks = {
