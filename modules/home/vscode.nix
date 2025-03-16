@@ -54,6 +54,7 @@
             };
           };
         };
+        "svelte.enable-ts-plugin" = true;
 
         "workbench.colorTheme" = "One Dark Pro";
         "workbench.iconTheme" = "material-icon-theme";
@@ -123,7 +124,6 @@
           };
         };
       };
-
       # userTasks = {
       #   version = "2.0.0";
       #   tasks = [{
