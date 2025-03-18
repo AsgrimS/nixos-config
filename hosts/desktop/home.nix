@@ -42,10 +42,6 @@
       n-clean = "sudo nix-collect-garbage -d";
       j = "z";
     };
-
-    sessionVariables = {
-      AWS_DEFAULT_PROFILE = "unouno-learning";
-    };
   };
 
   # This value determines the home Manager release that your

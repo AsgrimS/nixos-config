@@ -172,6 +172,7 @@
 
   environment.sessionVariables = rec {
     XCURSOR_THEME = "Numix-Cursor";
+    AWS_DEFAULT_PROFILE = "unouno-learning";
   };
 
   programs.zsh.enable = true;
