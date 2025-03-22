@@ -24,6 +24,7 @@
         ms-azuretools.vscode-docker
         bradlc.vscode-tailwindcss
         gruntfuggly.todo-tree
+        fill-labs.dependi
       ];
 
       userSettings = {
