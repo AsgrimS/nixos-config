@@ -8,5 +8,6 @@
     ../vscode.nix
     ../onlyoffice.nix
     ../dbeaver.nix
+    ../android.nix
   ];
 }
