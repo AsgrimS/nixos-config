@@ -25,6 +25,7 @@
         bradlc.vscode-tailwindcss
         gruntfuggly.todo-tree
         fill-labs.dependi
+        tamasfe.even-better-toml
       ];
 
       userSettings = {
@@ -125,6 +126,7 @@
           };
         };
       };
+
       # userTasks = {
       #   version = "2.0.0";
       #   tasks = [{
