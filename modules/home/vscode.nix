@@ -44,6 +44,11 @@
         "rust-analyzer.checkOnSave.command" = "clippy";
         "rust-analyzer.checkOnSave.enable" = true;
 
+        # Toml
+        "[toml]" = {
+          "editor.defaultFormatter" = "tamasfe.even-better-toml";
+        };
+
         # Nix
         "[nix]" = {
           "editor.defaultFormatter" = "jnoortheen.nix-ide";
