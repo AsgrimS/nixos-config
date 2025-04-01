@@ -43,6 +43,9 @@
         };
         "rust-analyzer.checkOnSave.command" = "clippy";
         "rust-analyzer.checkOnSave.enable" = true;
+        "github.copilot.enable" = {
+          "rust" = false;
+        };
 
         # Toml
         "[toml]" = {
