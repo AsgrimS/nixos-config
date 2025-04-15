@@ -14,6 +14,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    ../../modules/nix/docker.nix
   ];
 
   # Bootloader.
@@ -35,11 +36,9 @@
     auto-optimise-store = true;
   };
 
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than +5";
-  };
+  nix.extraOptions = ''
+    trusted-users = root asgrim
+  '';
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
