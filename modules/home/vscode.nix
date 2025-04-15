@@ -1,5 +1,12 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    lua-language-server
+    stylua
+    nil
+    nixfmt-rfc-style
+  ];
+
   programs.vscode = {
     enable = true;
 
@@ -75,8 +82,6 @@
             "editorInlayHint.background" = "#18181800";
           };
         };
-
-        "terminal.integrated.defaultProfile.osx" = "zsh";
 
         "todo-tree.general.tags" = [
           "TODO"

@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ config, ... }:
 {
   programs.alacritty = {
     enable = true;
@@ -7,11 +7,12 @@
       env.TERM = "xterm-256color";
 
       terminal.shell = {
-        program = "${config.home.homeDirectory}/.nix-profile/bin/zsh";
+        program = "${config.home.homeDirectory}/.nix-profile/bin/tmux";
         args = [
-          "-l"
-          "-c"
-          "tmux new-session -A -s main"
+          "new-session"
+          "-A"
+          "-s"
+          "main"
         ];
       };
 

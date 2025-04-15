@@ -35,15 +35,6 @@
     userEmail = "jan.semik@gmail.com";
   };
 
-  programs.zsh = {
-    shellAliases = {
-      n-rebuild = "sudo nixos-rebuild switch --flake ~/.config/nixos-config#desktop";
-      n-update = "nix flake update -I ~/.config/nixos-config";
-      n-clean = "sudo nix-collect-garbage -d";
-      j = "z";
-    };
-  };
-
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards

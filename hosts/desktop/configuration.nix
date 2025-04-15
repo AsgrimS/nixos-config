@@ -175,9 +175,7 @@
     AWS_DEFAULT_PROFILE = "unouno-learning";
   };
 
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell = pkgs.nushell;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

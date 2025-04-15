@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     tldr
@@ -11,15 +11,4 @@
     devenv
     awscli2
   ];
-
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  programs.zsh.initExtra = ''
-    echo
-    fastfetch
-    complete -C '${config.home.homeDirectory}/.nix-profile/bin/aws_completer' aws
-  '';
 }

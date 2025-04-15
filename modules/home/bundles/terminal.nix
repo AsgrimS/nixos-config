@@ -1,11 +1,9 @@
 {
   imports = [
     ../fonts.nix
-    ../zsh.nix
-    ../starship.nix
+    ../nushell.nix
     ../tmux.nix
     ../alacritty.nix
     ../cli-common.nix
-    ../lsp.nix
   ];
 }
