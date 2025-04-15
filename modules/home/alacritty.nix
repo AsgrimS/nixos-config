@@ -20,7 +20,7 @@
         normal = {
           family = "Fira Code Nerd Font";
         };
-        size = 14;
+        size = 13;
       };
 
       selection.save_to_clipboard = true;
