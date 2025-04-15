@@ -38,6 +38,7 @@
         n-update = "nix flake update -I ~/.config/nixos-config";
         n-clean = "sudo nix-collect-garbage -d";
         j = "z";
+        clear-fonts-cache = "rm -rf ~/.cache/fontconfig/";
       };
 
     };
