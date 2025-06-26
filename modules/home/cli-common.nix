@@ -6,7 +6,6 @@
     lazygit
     lazydocker
     bottom
-    devbox
     fastfetch
     devenv
     awscli2
